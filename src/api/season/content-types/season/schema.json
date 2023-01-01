@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seasons",
+  "info": {
+    "singularName": "season",
+    "pluralName": "seasons",
+    "displayName": "Season",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "season_number": {
+      "type": "integer"
+    },
+    "shows": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::show.show",
+      "mappedBy": "seasons"
+    }
+  }
+}

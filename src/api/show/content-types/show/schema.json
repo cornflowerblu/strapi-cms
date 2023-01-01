@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shows",
+  "info": {
+    "singularName": "show",
+    "pluralName": "shows",
+    "displayName": "Show",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "seasons": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::season.season",
+      "inversedBy": "shows"
+    }
+  }
+}
