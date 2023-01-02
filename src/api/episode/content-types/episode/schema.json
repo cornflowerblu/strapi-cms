@@ -27,6 +27,10 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::show.show"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
