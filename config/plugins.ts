@@ -12,4 +12,12 @@ export default ({ env }) => ({
   "import-export-entries": {
     enabled: true,
   },
+  "users-permissions": {
+    enabled: true,
+    config: {
+      jwt: {
+        expiresIn: "60m",
+      },
+    },
+  },
 });
