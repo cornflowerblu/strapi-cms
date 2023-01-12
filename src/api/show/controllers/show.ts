@@ -15,18 +15,24 @@ export default factories.createCoreController('api::show.show', ({ strapi }) => 
                 where show_id = ${ctx.querystring || 0};`
             )
 
-
-
             //@ts-ignore
             const showRows = await strapi.db.connection.raw(`
                 select shows.name from shows
                 where shows.id = ${ctx.querystring || 0};
             `)
 
+            //@ts-ignore
+            const episodeRows = await strapi.db.connection.raw(`
+                select count(*) from episodes_show_links
+                join shows s on episodes_show_links.show_id = s.id
+                where show_id = ${ctx.querystring || 0};`)
+
+
             const seasons = seasonRows.rows[0].count;
             const show = showRows.rows[0]?.name;
+            const episodes = episodeRows.rows[0]?.count;
 
-            return { show, seasons };
+            return { show, seasons, episodes };
         }
     }
 });
