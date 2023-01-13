@@ -17,7 +17,7 @@ export default factories.createCoreController('api::show.show', ({ strapi }) => 
 
             //@ts-ignore
             const showRows = await strapi.db.connection.raw(`
-                select shows.name from shows
+                select shows.name, shows.slug, shows.short_name from shows
                 where shows.id = ${ctx.querystring || 0};
             `)
 
@@ -29,7 +29,7 @@ export default factories.createCoreController('api::show.show', ({ strapi }) => 
 
 
             const seasons = seasonRows.rows[0].count;
-            const show = showRows.rows[0]?.name;
+            const show = showRows.rows[0];
             const episodes = episodeRows.rows[0]?.count;
 
             return { show, seasons, episodes };

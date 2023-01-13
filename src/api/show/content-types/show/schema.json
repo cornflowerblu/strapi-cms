@@ -20,6 +20,13 @@
       "relation": "manyToMany",
       "target": "api::season.season",
       "inversedBy": "shows"
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "short_name": {
+      "type": "string"
     }
   }
 }
