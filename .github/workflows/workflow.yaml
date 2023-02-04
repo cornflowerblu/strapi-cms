@@ -6,7 +6,6 @@ on:
       - ".env"
       - ".env.example"
       - ".editorconfig"
-      - ".github/workflows/**"
 
 jobs:
   build:
