@@ -37,6 +37,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
       - name: Save DigitalOcean kubeconfig with short-lived credentials
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s-1-24-8-do-0-sfo3-1671928634245
 
