@@ -18,8 +18,17 @@ jobs:
       - name: Update SHA
         run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/_meta
 
+      - name: Install kubectl
+        run: |
+          apt-get update
+          apt-get install ca-certificates
+          curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+          echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
+          apt-get update
+          apt-get install kubectl
+
       - name: Build container image
-        run: docker build -t registry.digitalocean.com/always-sunny/strapi:$(echo $GITHUB_SHA | head -c7) .
+        run: docker build -t registry.digitalocean.com/always-sunny/strapi:latest -t registry.digitalocean.com/always-sunny/strapi:$(echo $GITHUB_SHA | head -c7) .
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
@@ -30,16 +39,15 @@ jobs:
         run: doctl registry login --expiry-seconds 600
 
       - name: Push image to DigitalOcean Container Registry
-        run: docker push registry.digitalocean.com/always-sunny/strapi:$(echo $GITHUB_SHA | head -c7)
-
-      - name: Update deployment file
-        run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|strapi|registry.digitalocean.com/always-sunny:'${TAG}'|' $GITHUB_WORKSPACE/k8s/deployment.yml
+        run: docker push registry.digitalocean.com/always-sunny/strapi -a
 
       - name: Save DigitalOcean kubeconfig with short-lived credentials
-        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 actions-example-k8s-1-18
+        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s-1-24-8-do-0-sfo3-1671928634245
 
       - name: Deploy to DigitalOcean Kubernetes
         run: kubectl apply -f $GITHUB_WORKSPACE/k8s/deployment.yml
 
-      - name: Verify deployment
-        run: kubectl rollout status deployment/strapi-cms
+      - name: Deploy and Verify
+        run: |
+          kubectl rollout restart deployment/strapi-cms -n strapi
+          kubectl rollout status deployment/strapi-cms -n strapi

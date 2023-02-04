@@ -101,11 +101,8 @@ metadata:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2023-02-03T04:53:49Z"
   name: strapi-cms
   namespace: strapi
-  resourceVersion: "28711876"
-  uid: c11c02e7-b6e6-494e-a194-eb4126c50e01
 spec:
   progressDeadlineSeconds: 600
   replicas: 2
@@ -202,7 +199,6 @@ metadata:
           f:type: {}
       manager: rancher
       operation: Update
-      time: "2022-12-31T20:12:29Z"
   name: strapi-cms
   namespace: strapi
   ownerReferences:
@@ -211,8 +207,6 @@ metadata:
       kind: Deployment
       name: strapi-cms
       uid: c11c02e7-b6e6-494e-a194-eb4126c50e01
-  resourceVersion: "5043891"
-  uid: 2f54dcb2-8513-4af8-803f-2e8600468ee7
 spec:
   clusterIP: 10.245.196.79
   clusterIPs:
