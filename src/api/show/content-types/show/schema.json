@@ -27,6 +27,19 @@
     },
     "short_name": {
       "type": "string"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 220
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
