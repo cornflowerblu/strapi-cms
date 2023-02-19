@@ -14,7 +14,7 @@
     "@strapi/plugin-graphql": "^4.5.5",
     "@strapi/plugin-i18n": "4.5.5",
     "@strapi/plugin-users-permissions": "4.5.5",
-    "@strapi/strapi": "4.6.0",
+    "@strapi/strapi": "4.6.1",
     "pg": "8.6.0",
     "strapi-plugin-import-export-entries": "^1.18.0",
     "strapi-provider-upload-cloudflare-2": "^0.1.4"
