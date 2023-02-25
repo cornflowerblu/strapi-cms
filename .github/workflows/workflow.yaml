@@ -43,6 +43,9 @@ jobs:
       - name: Push image to DigitalOcean Container Registry
         run: docker push registry.digitalocean.com/always-sunny/strapi -a
 
+      - name: Make sure latest tag actually got pushed
+        run: docker push registry.digitalocean.com/always-sunny/strapi:latest
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
