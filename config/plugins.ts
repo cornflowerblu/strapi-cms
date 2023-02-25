@@ -3,8 +3,8 @@ export default ({ env }) => ({
     config: {
       provider: "strapi-provider-upload-cloudflare-2",
       providerOptions: {
-        accountId: env("accountId"),
-        apiKey: env("apiKey"),
+        accountId: env("accountId") || "1234567890",
+        apiKey: env("apiKey") || "my-api-key",
         variant: "sunny",
       },
     },

@@ -1,0 +1,18 @@
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Deps
+        run: yarn
+      
+      - name: Run Tests
+        run: export JWT_SECRET=79wf1qa2cl1f4p8plm5kaicrd693dg && yarn test
+        
