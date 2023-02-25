@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "health_check",
+  "info": {
+    "singularName": "health",
+    "pluralName": "health-check",
+    "displayName": "Sync Status",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "check": {
+      "type": "string",
+      "required": true,
+      "default": "OK"
+    }
+  }
+}
