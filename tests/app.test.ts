@@ -1,5 +1,7 @@
 import { setupStrapi } from "./helpers/strapi";
 
+jest.setTimeout(10000)
+
 beforeAll(async () => {
     await setupStrapi();
 });

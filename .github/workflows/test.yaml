@@ -12,9 +12,6 @@ jobs:
 
       - name: Install Deps
         run: yarn
-
-      - name: Build Strapi
-        run: yarn build 
       
       - name: Run Tests
         run: yarn test
