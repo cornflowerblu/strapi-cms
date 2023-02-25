@@ -17,7 +17,7 @@ const issueJWT = (payload, jwtOptions = {}) => {
   _.defaults(jwtOptions, strapi.config.get("plugin.users-permissions.jwt"));
   return jwt.sign(
     _.clone(payload.toJSON ? payload.toJSON() : payload),
-    strapi.config.get("plugin.users-permissions.jwtSecret") || "SUPERSECRET",
+    strapi.config.get("plugin.users-permissions.jwtSecret"),
     jwtOptions
   );
 };
