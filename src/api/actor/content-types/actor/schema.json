@@ -4,7 +4,8 @@
   "info": {
     "singularName": "actor",
     "pluralName": "actors",
-    "displayName": "Actor"
+    "displayName": "Actor",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -12,10 +13,6 @@
   "pluginOptions": {},
   "attributes": {
     "first_name": {
-      "type": "string",
-      "required": true
-    },
-    "last_name": {
       "type": "string",
       "required": true
     },
