@@ -16,6 +16,10 @@
       "type": "string",
       "required": true
     },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
     "characters": {
       "type": "relation",
       "relation": "oneToMany",
