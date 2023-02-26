@@ -65,11 +65,8 @@ jobs:
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s-1-24-8-do-0-sfo3-1671928634245
 
       - name: Install kubectl
-        run: |
-          sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-          echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-          sudo apt-get update
-          sudo apt-get install kubectl
+        uses: azure/setup-kubectl@v3
+        id: install
 
       - name: Update Deployment and Service
         run: kubectl apply -f $GITHUB_WORKSPACE/k8s/deployment.yml
