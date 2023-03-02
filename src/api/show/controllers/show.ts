@@ -18,9 +18,9 @@ export default factories.createCoreController(
 
         //@ts-ignore
         const showRows = await strapi.db.connection.raw(`
-                select shows.id, shows.name, shows.slug, shows.short_name from shows
-                where shows.id = ${ctx.querystring || 0};
-            `);
+          select shows.id, shows.name, shows.slug, shows.short_name from shows
+          where shows.id = ${ctx.querystring || 0} and shows.published_at is not null;
+        `);
 
         //@ts-ignore
         const episodeRows = await strapi.db.connection.raw(`
