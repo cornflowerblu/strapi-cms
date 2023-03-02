@@ -3,9 +3,9 @@ on:
     branches:
       - main
     paths-ignore:
-      - ".env"
-      - ".env.example"
-      - ".editorconfig"
+      - '.env'
+      - '.env.example'
+      - '.editorconfig'
 
 jobs:
   Test:
@@ -75,7 +75,7 @@ jobs:
         run: |
           kubectl rollout restart deployment/strapi-cms -n strapi
           kubectl rollout status deployment/strapi-cms -n strapi
-  
+
   update-schema:
     name: Update Schema
     runs-on: ubuntu-latest

@@ -4,4 +4,4 @@
 
 import { factories } from '@strapi/strapi'
 
-export default factories.createCoreController('api::health.health');
+export default factories.createCoreController('api::health.health')

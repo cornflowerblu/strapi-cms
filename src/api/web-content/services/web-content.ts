@@ -2,6 +2,6 @@
  * web-content service
  */
 
-import { factories } from '@strapi/strapi';
+import { factories } from '@strapi/strapi'
 
-export default factories.createCoreService('api::web-content.web-content');
+export default factories.createCoreService('api::web-content.web-content')

@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "11"
+    deployment.kubernetes.io/revision: '11'
     field.cattle.io/publicEndpoints: '[{"addresses":["146.190.14.75"],"port":443,"protocol":"HTTPS","serviceName":"strapi:strapi-cms","ingressName":"strapi:strapi-ingress","hostname":"cms.rurich.dev","path":"/","allNodes":false}]'
-  creationTimestamp: "2022-12-31T20:12:29Z"
+  creationTimestamp: '2022-12-31T20:12:29Z'
   generation: 13
   labels:
     workload.user.cattle.io/workloadselector: apps.deployment-strapi-strapi-cms
@@ -66,7 +66,7 @@ metadata:
               f:terminationGracePeriodSeconds: {}
       manager: rancher
       operation: Update
-      time: "2022-12-31T20:20:36Z"
+      time: '2022-12-31T20:20:36Z'
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -118,7 +118,7 @@ spec:
   template:
     metadata:
       annotations:
-        cattle.io/timestamp: "2023-01-13T04:34:06Z"
+        cattle.io/timestamp: '2023-01-13T04:34:06Z'
       labels:
         workload.user.cattle.io/workloadselector: apps.deployment-strapi-strapi-cms
     spec:
@@ -148,17 +148,17 @@ spec:
 status:
   availableReplicas: 2
   conditions:
-    - lastTransitionTime: "2022-12-31T20:12:29Z"
-      lastUpdateTime: "2023-01-13T04:34:38Z"
+    - lastTransitionTime: '2022-12-31T20:12:29Z'
+      lastUpdateTime: '2023-01-13T04:34:38Z'
       message: ReplicaSet "strapi-cms-85fb8d4c9d" has successfully progressed.
       reason: NewReplicaSetAvailable
-      status: "True"
+      status: 'True'
       type: Progressing
-    - lastTransitionTime: "2023-02-03T04:53:49Z"
-      lastUpdateTime: "2023-02-03T04:53:49Z"
+    - lastTransitionTime: '2023-02-03T04:53:49Z'
+      lastUpdateTime: '2023-02-03T04:53:49Z'
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
-      status: "True"
+      status: 'True'
       type: Available
   observedGeneration: 13
   readyReplicas: 2
@@ -170,8 +170,8 @@ kind: Service
 metadata:
   annotations:
     field.cattle.io/targetWorkloadIds: '["strapi/strapi-cms"]'
-    management.cattle.io/ui-managed: "true"
-  creationTimestamp: "2022-12-31T20:12:29Z"
+    management.cattle.io/ui-managed: 'true'
+  creationTimestamp: '2022-12-31T20:12:29Z'
   managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1

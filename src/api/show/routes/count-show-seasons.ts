@@ -6,7 +6,7 @@ export default {
       handler: 'show.countShowSeasons',
       config: {
         auth: false,
-      }
-    }
-  ]
+      },
+    },
+  ],
 }

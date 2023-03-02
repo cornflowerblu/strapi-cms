@@ -12,7 +12,6 @@ jobs:
 
       - name: Install Deps
         run: yarn
-      
+
       - name: Run Tests
         run: export JWT_SECRET=79wf1qa2cl1f4p8plm5kaicrd693dg && yarn test
-        

@@ -16,12 +16,7 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images",
-        "videos",
-        "audios",
-        "files"
-      ]
+      "allowedTypes": ["images", "videos", "audios", "files"]
     },
     "first_name": {
       "type": "string",

@@ -4,4 +4,4 @@
 
 import { factories } from '@strapi/strapi'
 
-export default factories.createCoreController('api::season.season');
+export default factories.createCoreController('api::season.season')

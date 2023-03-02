@@ -2,6 +2,6 @@
  * character service
  */
 
-import { factories } from '@strapi/strapi';
+import { factories } from '@strapi/strapi'
 
-export default factories.createCoreService('api::character.character');
+export default factories.createCoreService('api::character.character')

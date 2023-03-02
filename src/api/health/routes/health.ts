@@ -2,6 +2,6 @@
  * health router
  */
 
-import { factories } from '@strapi/strapi';
+import { factories } from '@strapi/strapi'
 
-export default factories.createCoreRouter('api::health.health');
+export default factories.createCoreRouter('api::health.health')
